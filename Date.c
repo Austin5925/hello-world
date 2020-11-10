@@ -4,7 +4,7 @@
 int output(int,int,int);
 int main (void)
 { 
-  int month, day, year, temp;
+  int month, day, year;
   printf("Enter date (mm/dd/yyyy)(can be any year as long as it is a positive integer) : ") ;
   scanf("%d /%d /%d", &month, &day, &year) ;
   printf ("Dated this %d", day) ;
@@ -48,8 +48,10 @@ int main (void)
 
   printf(", %.2d.\n" , year) ;
   output(month,day,year);
-  return 0;
+  printf("\n");
   system("pause");
+  return 0;
+  
 } 
 
 
@@ -63,12 +65,12 @@ int output(int month, int day, int year){
 	}
 	
 	for(;month>1; month--){
-		if((((((month==1 || month==3)|| (month==5))|| (month==7))|| (month==8))|| (month==10)) || (month==12))
+		if(month==1 || month==3|| month==5|| month==7|| month==8|| month==10 || month==12)
 		sum += 31;
-		else if(((((month==4 || month==6)|| (month==9))|| (month==11))))
+		else if(month==4 || month==6|| month==9|| month==11)
 		sum += 30;
 		else if(month==2)
-			if((year%4==0 && year%100!=0)||(year%400==0))
+			if(year%4==0 && year%100!=0 ||year%400==0)
 			sum += 29;
 			else
 			sum += 28;
